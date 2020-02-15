@@ -1,0 +1,144 @@
+html, body{
+	padding: 0;
+	margin: 0;
+}
+body{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 60px 1fr 60px;
+	grid-template-areas: 
+	"header"
+	"content"
+	"footer";
+	height: 100vh;
+}
+header, nav, #content, footer{
+	background: gold;
+}
+header{
+	grid-area: header;
+}
+
+#content{
+	grid-area: content;
+}
+footer{
+	grid-area: footer;
+}
+
+
+header{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-family: 'Montserrat', sans-serif;
+	background: #0099e5;
+}
+#logo{
+	color: #fff;
+}
+#links > a{
+	text-decoration: none;
+	color: #fff;
+}
+#search > input{
+	outline: none;
+	border: 1px #ff4c4c solid;
+	border-radius: 2px;
+	height: 30px;
+}
+
+
+#content{
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#content article{
+	border: 2px #34bf49 solid;
+	padding: 2%;
+	margin-top: 3%;
+	background: #3DB7F2;
+}
+#content article:last-child{
+	margin-bottom: 3%;
+}
+#content article h1{
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+}
+#content article p{
+	text-align: left;
+	font-size: large;
+	width: 800px;
+	font-family: 'Cormorant Garamond', serif;
+}
+.btn-right, .btn-left{
+	height: 30px;
+	border: 1px #ff4c4c solid;
+}
+.btn-right:hover, .btn-left:hover{
+	transition: 0,5s;
+	transform: scale(1.08);	
+}
+.btn-right{
+	float: right;
+}
+
+footer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #0099e5;
+}
+.links1{
+	display: flex;
+}
+footer > div i{
+	font-size: xx-large;
+	color: #fff;
+	margin-left: 20px;
+}
+
+
+@media screen and (max-width: 1000px){
+	#content article, img{
+		width: 500px;
+	}
+	#content article p{
+		width: 500px;
+	}
+}
+
+@media screen and (max-width: 600px){
+	body{
+	grid-template-columns: 1fr;
+	grid-template-rows: 120px 1fr 60px;
+}
+	header{
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	#logo{
+		margin: 10px 0;
+	}
+	#links{
+		margin-bottom: 3%;
+	}
+	#search{
+		margin-right: 0;
+		padding-bottom: 10px;
+	}
+		#content article{
+		width: 90%;
+	}
+	#content article img{
+		width: 100%;
+	}
+	#content article p{
+		width: 100%;
+	}
+}
+
